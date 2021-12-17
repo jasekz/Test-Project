@@ -16,6 +16,15 @@ class Shopper extends Model
     use HasFactory, SoftDeletes;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'first_name', 'last_name', 'email', 'location_id', 'status_id', 'check_in'
+    ];
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function location(): \Illuminate\Database\Eloquent\Relations\BelongsTo

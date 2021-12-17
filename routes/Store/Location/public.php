@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Store\Location\LocationController;
 use App\Http\Controllers\Store\Location\QrCodeController;
+use App\Http\Controllers\Shopper\ShopperQueueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,9 @@ Route::namespace('Location')
 
         Route::name('location')
             ->get('/{location}', [LocationController::class, 'public']);
+
+        Route::name('save')
+            ->post('/{location}/enque', [ShopperQueueController::class, 'store']);
 
     });
 

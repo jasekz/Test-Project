@@ -17,8 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::name('create')
     ->get('/create', [LocationController::class, 'create']);
 
+Route::name('edit')
+    ->get('/{locationUuid}/edit', [LocationController::class, 'edit']);
+
+Route::name('update')
+    ->post('/{locationUuid}/update', [LocationController::class, 'update']);
+
 Route::name('save')
     ->post('/create', [LocationController::class, 'store']);
 
 Route::name('queue')
     ->get('/{locationUuid}', [LocationController::class, 'queue']);
+
+Route::name('checkout')
+    ->post('/{locationUuid}', [LocationController::class, 'checkout']);

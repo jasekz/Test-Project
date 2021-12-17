@@ -4,6 +4,7 @@ namespace App\Repositories\Shopper;
 
 use App\Models\Shopper\Shopper;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class ShopperRepository
